@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>고기잡이</title>
+	<style type="text/css">
+		@font-face {
+		    font-family: 'PPEditorialNew';
+		    src:url('./fonts/PPEditorialNew-Regular.otf') format('woff');}
+		body{margin: 5%;}
+		.fish{width: 150px; height: 60px; position: absolute;
+			background: url(./img/fishimg.png); 
+			background-size: 150px auto;
+			}
+		#counter{font-family: 'PPEditorialNew'; font-size: 6rem; line-height: 1.25em; margin-top: 1em}
+	</style>
+</head>
+<body>
+	<div id="counter">0</div>
+
+
+
+	<script type="text/javascript">
+
+		var count = 0;
+		counter.innerHTML = count + "/5 fishes";
+		makefish();
+
+		function makefish(){
+			var a = document.createElement("div");
+			a.id = "ffff";
+			a.className = "fish";
+			var b = Math.random() * window.innerWidth*0.9;
+			var c = Math.random() * window.innerHeight * 0.9;
+			a.style.left = b + "px"
+			a.style.top = c + "px"
+
+			a.onclick = function(){
+				if(count < 4){
+					a.parentNode.removeChild(a);
+					makefish();
+					count += 1;
+	 				counter.innerHTML = count + "/5 fishes";
+	 				}
+				if(count == 4){
+					a.parentNode.removeChild(a);
+					makefish();
+					count += 1;
+	 				counter.innerHTML = count + "/5 fishes<br>You caught many fish <br>and fully load a ship with fish. :)";
+	 				document.body.style.background = "skyblue";
+	 				}
+	 			if(count > 4){
+					a.parentNode.removeChild(a);
+					makefish();
+					count += 1;
+	 				counter.innerHTML = count + "/5 fishes<br>stop fishing! <br>you are doing overfishing.";
+	 				document.body.style.background = "orangered";
+	 				}
+	 			if(count > 9){
+					a.parentNode.removeChild(a);
+					makefish();
+					count += 1;
+	 				counter.innerHTML = count + "/5 fishes<br>Okay, Do as you will :(";
+	 				}
+
+ 				}
+
+			document.body.appendChild(a);
+			}
+		
+
+
+
+		// console.log(window.innerWidth, window.innerHeight);
+	</script>
+</body>
+</html>
