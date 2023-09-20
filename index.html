@@ -42,6 +42,8 @@
 					makefish();
 					count += 1;
 	 				counter.innerHTML = count + "/5 fishes";
+					var audio = new Audio('Splash.mp3');
+					audio.play();
 	 				}
 				if(count == 4){
 					a.parentNode.removeChild(a);
@@ -49,6 +51,8 @@
 					count += 1;
 	 				counter.innerHTML = count + "/5 fishes<br>You caught many fish <br>and fully load a ship with fish. :)";
 	 				document.body.style.background = "skyblue";
+					var audio = new Audio('Splash.mp3');
+					audio.play();
 	 				}
 	 			if(count > 4){
 					a.parentNode.removeChild(a);
@@ -56,14 +60,9 @@
 					count += 1;
 	 				counter.innerHTML = count + "/5 fishes<br>stop fishing! <br>you are doing overfishing.";
 	 				document.body.style.background = "orangered";
+					var audio = new Audio('Splash.mp3');
+					audio.play();
 	 				}
-	 			if(count > 9){
-					a.parentNode.removeChild(a);
-					makefish();
-					count += 1;
-	 				counter.innerHTML = count + "/5 fishes<br>Okay, Do as you will :(";
-	 				}
-
  				}
 
 			document.body.appendChild(a);
